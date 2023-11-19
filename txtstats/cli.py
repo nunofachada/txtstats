@@ -1,3 +1,7 @@
+"""
+Functions for to be invoked as command line scripts.
+"""
+
 import sys
 from .stats_functions import text_stats
 
