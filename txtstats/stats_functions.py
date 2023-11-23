@@ -15,12 +15,48 @@ def text_stats(txt: str) -> dict[str, Any]:
     Returns:
       A dictionary containing the generated text statistics.
     """
-    wc = len(txt.split())
-    lc = len(txt.split("\n"))
-    cc = len(txt)
 
-    return {"word_count": wc, "line_count": lc, "char_count": cc}
+    return {
+        "word_count": _word_count(txt),
+        "line_count": _line_count(txt),
+        "char_count": _char_count(txt),
+    }
 
 
-if __name__ == "__main__":
-    print(text_stats("Hello world\nBye world"))
+def _word_count(txt: str) -> int:
+    """Determine the word count.
+
+    Args:
+      s:
+        The text from which to obtain the word count.
+
+    Returns:
+      The word count of the specified text.
+    """
+    return len(txt.split())
+
+
+def _line_count(txt: str) -> int:
+    """Determine the line count.
+
+    Args:
+      s:
+        The text from which to obtain the line count.
+
+    Returns:
+      The line count of the specified text.
+    """
+    return len(txt.split("\n"))
+
+
+def _char_count(txt: str) -> int:
+    """Determine the character count.
+
+    Args:
+      s:
+        The text from which to obtain the character count.
+
+    Returns:
+      The character count of the specified text.
+    """
+    return len(txt)

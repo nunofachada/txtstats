@@ -5,6 +5,7 @@ Functions for to be invoked as command line scripts.
 import sys
 from .stats_functions import text_stats
 
+
 def main():
     s = sys.argv[1]
     s_stats = text_stats(s)
