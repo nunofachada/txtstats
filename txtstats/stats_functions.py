@@ -17,9 +17,9 @@ def text_stats(txt: str) -> dict[str, Any]:
     """
 
     return {
-        "word_count": _word_count(txt),
-        "line_count": _line_count(txt),
-        "char_count": _char_count(txt),
+        _word_count.__name__[1:]: _word_count(txt),
+        _line_count.__name__[1:]: _line_count(txt),
+        _char_count.__name__[1:]: _char_count(txt),
     }
 
 
