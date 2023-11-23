@@ -10,7 +10,7 @@ def _find_stats() -> dict[str, Callable[[str], Any]]:
 
     discovered_plugins = entry_points(group="txtstats.stats")
 
-    found_stats: Callable[[str], Any] = {}
+    found_stats: dict[str, Callable[[str], Any]] = {}
 
     for entry_point in discovered_plugins:
         found_stats[entry_point.name] = entry_point.load()

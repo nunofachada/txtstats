@@ -15,4 +15,3 @@ def text_stats(txt: str) -> dict[str, Any]:
     """
 
     return {name: stat_func(txt) for name, stat_func in _find_stats().items()}
-    # return {stat_func.__name__[1:]: stat_func(txt) for stat_func in _stats}
