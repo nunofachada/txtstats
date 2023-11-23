@@ -15,3 +15,8 @@ dependencies = [  ]
 
 [project.scripts]
 txtstats = "txtstats.cli:main"
+
+[project.entry-points."txtstats.stats"]
+word_count = "txtstats.stats_functions:_word_count"
+line_count = "txtstats.stats_functions:_line_count"
+char_count = "txtstats.stats_functions:_char_count"
