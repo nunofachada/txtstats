@@ -6,7 +6,7 @@ import sys
 from inspect import getdoc
 
 
-def main():
+def _main():
     if len(sys.argv) > 1:
         from .api import text_stats
 

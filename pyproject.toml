@@ -14,7 +14,7 @@ authors = [ { name = "Nuno Fachada", email = "nuno.fachada@ulusofona.pt" } ]
 dependencies = [  ]
 
 [project.scripts]
-txtstats = "txtstats.cli:main"
+txtstats = "txtstats.cli:_main"
 
 [project.entry-points."txtstats.stats"]
 word_count = "txtstats.stats_functions:_word_count"
