@@ -4,6 +4,7 @@ Functions for to be invoked as command line scripts.
 
 import sys
 from inspect import getdoc
+
 from tabulate import tabulate
 
 

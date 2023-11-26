@@ -8,11 +8,6 @@ def _find_stats() -> dict[str, Callable[[str], Any]]:
     else:
         from importlib.metadata import entry_points
 
-    discovered_plugins = entry_points(group="txtstats.stats")
+    plugin_entrypoints = entry_points(group="txtstats.stats")
 
-    found_stats: dict[str, Callable[[str], Any]] = {}
-
-    for entry_point in discovered_plugins:
-        found_stats[entry_point.name] = entry_point.load()
-
-    return found_stats
+    return {ep.name: ep.load() for ep in plugin_entrypoints}
