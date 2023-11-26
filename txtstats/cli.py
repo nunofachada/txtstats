@@ -14,10 +14,10 @@ def _main():
 
         f = sys.argv[1]
         with open(f, "r") as text_file:
-            s_stats = text_stats(text_file.read())
+            f_stats = text_stats(text_file.read())
         print(
             tabulate(
-                s_stats.items(),
+                f_stats.items(),
                 headers=["Statistic", "Value"],
                 tablefmt="rounded_outline",
             )
