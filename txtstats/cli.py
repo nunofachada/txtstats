@@ -28,7 +28,7 @@ def _main():
 
         stats_found = _find_stats()
 
-        stats_help = {k: getdoc(v).split("\n")[0] for k, v in stats_found.items()}
+        stats_help = {n: getdoc(f).split("\n")[0] for n, f in stats_found.items()}
 
         print(
             tabulate(
