@@ -1,7 +1,4 @@
-"""
-The txtstats package offers functionality for obtaining and exporting statistics
-of a given text.
-"""
+"""**txtstats** calculates text statistics."""
 
 __all__ = ["text_stats"]
 
