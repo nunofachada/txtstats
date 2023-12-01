@@ -25,6 +25,7 @@ devel = [
     "Flake8-pyproject",
     "isort",
     "pre-commit",
+    "pytest >= 7.0.0",
 ]
 
 [project.scripts]
