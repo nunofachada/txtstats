@@ -5,13 +5,14 @@ import pytest
 from txtstats import text_stats
 
 
-def test_text_stats():
-    """Test text_stats() function for expected output."""
+def test_text_stats_output_type():
+    """Test text_stats() function for expected output type."""
     d = text_stats("Hello world!")
-    assert isinstance(d, dict)
 
-    for key in d:
-        assert isinstance(key, str)
+    # Check that d is a dictionary
+    assert isinstance(d, dict)
+    # Check that all keys in d are of type string
+    assert {type(k) for k in d} == {str}
 
 
 def test_text_stats_errors():
