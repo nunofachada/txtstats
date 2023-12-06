@@ -15,16 +15,16 @@ def test_text_stats_output_type(string_to_test):
     assert {type(k) for k in d} == {str}
 
 
-def test_text_stats_errors():
+@pytest.mark.parametrize(
+    "input_val, expected_error",
+    [
+        (1, TypeError),
+        (1.34, TypeError),
+        (["hello", "world"], TypeError),
+        (("hello", "world", 1, 2, 3), TypeError),
+    ],
+)
+def test_text_stats_errors(input_val, expected_error):
     """Test text_stats() function for expected errors."""
-    with pytest.raises(TypeError):
-        text_stats(1)
-
-    with pytest.raises(TypeError):
-        text_stats(1.34)
-
-    with pytest.raises(TypeError):
-        text_stats(["hello", "world"])
-
-    with pytest.raises(TypeError):
-        text_stats(("hello", "world", 1, 2, 3))
+    with pytest.raises(expected_error):
+        text_stats(input_val)
