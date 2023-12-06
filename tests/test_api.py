@@ -5,9 +5,9 @@ import pytest
 from txtstats import text_stats
 
 
-def test_text_stats_output_type(string_to_test):
+def test_text_stats_output_type(data_to_test):
     """Test text_stats() function for expected output type."""
-    d = text_stats(string_to_test)
+    d = text_stats(data_to_test[0])
 
     # Check that d is a dictionary
     assert isinstance(d, dict)
